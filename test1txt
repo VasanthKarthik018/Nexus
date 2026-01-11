@@ -1,1 +1,123 @@
-newfile
+Build a complete Streamlit web application for diagnosing dementia from brain MRI images using a pretrained deep learning model (model.h5), with AI-generated medical reports and Grad-CAM explainability.
+
+🔐 1. Authentication Module
+
+Implement a login page using Streamlit.
+
+Use simple username/password authentication (hardcoded credentials are acceptable).
+
+Use st.session_state to manage login state.
+
+Redirect authenticated users to the dashboard.
+
+🧑‍⚕️ 2. Patient Information Module
+
+Collect patient details:
+
+Patient Name
+
+Age
+
+Gender
+
+Clinical Notes / Symptoms
+
+Validate inputs (mandatory fields, numeric age).
+
+🧠 3. MRI Image Upload & Display
+
+Upload MRI brain scan images (.jpg, .jpeg, .png).
+
+Display the uploaded image clearly in the UI.
+
+⚙️ 4. Image Preprocessing Pipeline
+
+Resize image to 224 × 224
+
+Normalize pixel values to [0,1]
+
+Expand dimensions for model inference
+
+Keep preprocessing modular and reusable
+
+🤖 5. Dementia Classification Model
+
+Load pretrained CNN / VGG / DenseNet model from model.h5
+
+Predict one of the following classes:
+
+NonDemented
+
+VeryMildDemented
+
+MildDemented
+
+ModerateDemented
+
+Display:
+
+Predicted class
+
+Confidence score (%)
+
+Use color-coded alerts:
+
+Green → NonDemented
+
+Orange / Red → Dementia detected
+
+🔍 6. Grad-CAM Visualization (Explainable AI)
+
+Implement Grad-CAM or Grad-CAM++ visualization
+
+Overlay heatmap on original MRI image
+
+Clearly highlight regions contributing to model decision
+
+Display Grad-CAM image alongside prediction results
+
+🧾 7. GenAI-Based Medical Report Generation
+
+Use a Generative AI model (LLM) to generate a clinical-style diagnostic report including:
+
+Patient details summary
+
+Model prediction
+
+Confidence level
+
+Interpretation of Grad-CAM findings
+
+Clinical disclaimer (AI-assisted, not final diagnosis)
+
+Report tone should be professional, medical, and academic
+
+📥 8. Downloadable Reports
+
+Generate and allow download of:
+
+AI Diagnostic Report (PDF / TXT)
+
+Grad-CAM Visualization Report (image embedded in PDF)
+
+Include:
+
+Uploaded MRI image
+
+Grad-CAM heatmap
+
+Prediction results
+
+Generated GenAI explanation
+
+🛠 Technical Requirements
+
+Frontend & backend in Streamlit
+
+Deep learning with TensorFlow / Keras
+
+Image processing using OpenCV, PIL, NumPy
+
+Use reportlab or similar library for PDF generation
+
+Clean, modular, and well-commented code
